@@ -10,6 +10,7 @@ import Contact from './pages/Profil/Contact';
 import Gallery from './pages/Profil/Gallery';
 import Music from './pages/Profil/Music';
 import Video from './pages/Profil/Video';
+import PageNotFound from './pages/Error/PageNotFound';
 
 function App() {
   return (
@@ -25,6 +26,7 @@ function App() {
         <Route path="/gallery" element={<Gallery />} />
         <Route path="/music" element={<Music />} />
         <Route path="/video" element={<Video />} />
+        <Route path="*" element={<PageNotFound />} />
       </Routes>
     </BrowserRouter>
   </div>
