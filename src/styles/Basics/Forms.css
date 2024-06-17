@@ -1,0 +1,70 @@
+.inscription-container, .connexion-container, .contact-container  {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background-color: #20835D;
+}
+
+.image-container, .form-container {
+  width: 50%; 
+}
+
+.image-container img {
+  width: 100%; 
+  height: 1110px;
+  display: block;
+}
+
+.form-container {
+  background-color: #1D5A43;
+  padding: 20px;
+  border-radius: 15px;
+}
+
+.form-container h1 {
+  color: #DACA3B;
+  text-align: center;
+}
+
+.form-input {
+  width: 100%; /* Ajusté pour uniformité */
+  margin-bottom: 15px;
+}
+
+.form-container label {
+  display: block;
+  color: white;
+  margin-bottom: 5px;
+}
+
+input[type="text"], input[type="email"], input[type="password"], .form-container textarea {
+  width: 100%;
+  padding: 10px;
+  margin-top: 5px;
+  border: none;
+  border-radius: 5px;
+}
+
+.form-container button {
+  width: 100%;
+  background-color: #DACA3B;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 20px;
+  cursor: pointer;
+  display: block; /* Centrer le bouton dans son conteneur */
+  margin-top: 20px;
+}
+
+.switch-form {
+  color: white;
+  text-align: center;
+  margin-top: 20px;
+}
+
+.switch-form span {
+  cursor: pointer;
+  color: #DACA3B;
+}

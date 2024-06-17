@@ -1,5 +1,7 @@
 import './App.css';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import RequireGuest from './context/RequireGuest';  
+import RequireAuth from './context/RequireAuth';
 
 import Accueil from './pages/Accueil/Accueil';
 import Wall from './pages/Profil/Wall';
@@ -15,21 +17,29 @@ import PageNotFound from './pages/Error/PageNotFound';
 function App() {
   return (
     <div>
-    <BrowserRouter>
-      <Routes>
-        <Route path="/" element={<Accueil />} />
-        <Route path="/inscription" element={<Inscription />} />
-        <Route path="/connexion" element={<Connexion />} />
-        <Route path="/contact" element={<Contact />} />
-        <Route path="/profil" element={<Profil />} />
-        <Route path="/wall" element={<Wall />} />
-        <Route path="/gallery" element={<Gallery />} />
-        <Route path="/music" element={<Music />} />
-        <Route path="/video" element={<Video />} />
-        <Route path="*" element={<PageNotFound />} />
-      </Routes>
-    </BrowserRouter>
-  </div>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<Accueil />} />
+          <Route path="/inscription" element={
+            <RequireGuest>
+              <Inscription />
+            </RequireGuest>
+          } />
+          <Route path="/connexion" element={
+            <RequireGuest>
+              <Connexion />
+            </RequireGuest>
+          } />
+            <Route path="/contact" element={<RequireAuth><Contact /></RequireAuth>} />
+            <Route path="/profil" element={<RequireAuth><Profil /></RequireAuth>} />
+            <Route path="/profil/wall" element={<RequireAuth><Wall /></RequireAuth>} />
+            <Route path="/profil/gallery" element={<RequireAuth><Gallery /></RequireAuth>} />
+            <Route path="/profil/music" element={<RequireAuth><Music /></RequireAuth>} />
+            <Route path="/profil/video" element={<RequireAuth><Video /></RequireAuth>} />
+          <Route path="*" element={<PageNotFound />} />
+        </Routes>
+      </BrowserRouter>
+    </div>
   );
 }
 

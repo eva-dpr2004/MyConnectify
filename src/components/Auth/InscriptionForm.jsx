@@ -5,50 +5,52 @@ import { ref, uploadBytesResumable, getDownloadURL } from 'firebase/storage';
 import { doc, setDoc, serverTimestamp } from 'firebase/firestore';
 import { auth, db, storage } from '../../firebase';
 import DriveFolderUploadOutlinedIcon from '@mui/icons-material/DriveFolderUploadOutlined';
-import { userInputs } from '../../formSource';
+import ChillinGuyImage from '../../assets/chillinguy.jpeg';
+import '../../styles/Basics/Forms.css'
 
 const InscriptionForm = () => {
   const [file, setFile] = useState(null);
-  const [data, setData] = useState({});
+  const [data, setData] = useState({
+    name: '',
+    email: '',
+    password: '',
+    passwordConfirm: ''
+  });
   const [per, setPerc] = useState(null);
   const navigate = useNavigate();
 
   useEffect(() => {
-    const uploadFile = () => {
-      const name = new Date().getTime() + file.name;
-      const storageRef = ref(storage, name);
-      const uploadTask = uploadBytesResumable(storageRef, file);
+    if (!file) return;
+    const name = new Date().getTime() + file.name;
+    const storageRef = ref(storage, name);
+    const uploadTask = uploadBytesResumable(storageRef, file);
 
-      uploadTask.on(
-        'state_changed',
-        (snapshot) => {
-          const progress = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
-          setPerc(progress);
-        },
-        (error) => {
-          console.error(error);
-        },
-        () => {
-          getDownloadURL(uploadTask.snapshot.ref).then((downloadURL) => {
-            setData((prev) => ({ ...prev, img: downloadURL }));
-          });
-        }
-      );
-    };
-
-    if (file) {
-      uploadFile();
-    }
+    uploadTask.on(
+      'state_changed',
+      (snapshot) => {
+        const progress = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
+        setPerc(progress);
+      },
+      (error) => console.error(error),
+      () => {
+        getDownloadURL(uploadTask.snapshot.ref).then((downloadURL) => {
+          setData(prev => ({ ...prev, img: downloadURL }));
+        });
+      }
+    );
   }, [file]);
 
   const handleInput = (e) => {
-    const id = e.target.id;
-    const value = e.target.value;
+    const { id, value } = e.target;
     setData({ ...data, [id]: value });
   };
 
   const handleAdd = async (e) => {
     e.preventDefault();
+    if (data.password !== data.passwordConfirm) {
+      alert('Passwords do not match');
+      return;
+    }
     try {
       const res = await createUserWithEmailAndPassword(auth, data.email, data.password);
       await setDoc(doc(db, 'users', res.user.uid), {
@@ -58,55 +60,46 @@ const InscriptionForm = () => {
       navigate('/');
     } catch (err) {
       console.error(err);
+      alert('Failed to create an account');
     }
   };
 
   return (
-    <div className="new">
-      <div className="newContainer">
-        <div className="top">
-          <h1>Inscription</h1>
-        </div>
-        <div className="bottom">
-          <div className="left">
-            <img
-              src={
-                file
-                  ? URL.createObjectURL(file)
-                  : 'https://icon-library.com/images/no-image-icon/no-image-icon-0.jpg'
-              }
-              alt=""
-            />
-          </div>
-          <div className="right">
-            <form onSubmit={handleAdd}>
-              <div className="formInput">
-                <label htmlFor="file">
-                  Image: <DriveFolderUploadOutlinedIcon className="icon" />
-                </label>
+    <div className="inscription-container">
+      <div className="image-container">
+        <img
+          src={file ? URL.createObjectURL(file) : ChillinGuyImage}
+          alt="Chillin Guy"
+        />
+      </div>
+      <div className="form-container">
+        <h1>Inscription</h1>
+        <div className="form-inside">
+          <form onSubmit={handleAdd}>
+            {['name', 'email', 'password', 'passwordConfirm'].map((field) => (
+              <div className="form-input" key={field}>
+                <label htmlFor={field}>{field.charAt(0).toUpperCase() + field.slice(1)}</label>
                 <input
-                  type="file"
-                  id="file"
-                  onChange={(e) => setFile(e.target.files[0])}
-                  style={{ display: 'none' }}
+                  type={field === 'password' || field === 'passwordConfirm' ? 'password' : 'text'}
+                  id={field}
+                  value={data[field]}
+                  onChange={handleInput}
+                  required
                 />
               </div>
-              {userInputs.map((input) => (
-                <div className="formInput" key={input.id}>
-                  <label>{input.label}</label>
-                  <input
-                    id={input.id}
-                    type={input.type}
-                    placeholder={input.placeholder}
-                    onChange={handleInput}
-                  />
-                </div>
-              ))}
-              <button disabled={per != null && per < 100} type="submit">
-                S'inscrire
-              </button>
-            </form>
-          </div>
+            ))}
+            <div className="form-input">
+              <label htmlFor="file">Image: <DriveFolderUploadOutlinedIcon className="icon" /></label>
+              <input
+                type="file"
+                id="file"
+                onChange={(e) => setFile(e.target.files[0])}
+                hidden
+              />
+            </div>
+            <button type="submit" disabled={per !== null && per < 100}>Valider</button>
+            <p className="switch-form">Déjà un compte ? <span onClick={() => navigate('/connexion')}>Connectez-vous</span></p>
+          </form>
         </div>
       </div>
     </div>

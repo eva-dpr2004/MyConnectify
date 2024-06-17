@@ -1,7 +1,7 @@
 import React from 'react'
 import Navbar from '../../components/Basics/Navbar'
 import Footer from '../../components/Basics/Footer'
-import ContactForm from '../../components/Profil/ContactForm'
+import ContactForm from '../../components/Auth/ContactForm'
 
 function Contact() {
   return (

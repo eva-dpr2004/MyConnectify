@@ -1,16 +1,23 @@
 import React from 'react'
-import Navbar from '../../components/Basics/Navbar'
+import ProfilNavbar from '../../components/Basics/ProfilNavbar'
 import Footer from '../../components/Basics/Footer'
 import SideNav from '../../components/Profil/SideNav'
-import ProfilInfo from '../../components/Profil/ProfilInfo'
+import HeaderProfil from '../../components/Profil/HeaderProfil'
+import MyWall from '../../components/Profil/MyWall'
+import MyGallery from '../../components/Profil/MyGallery'
+import MyVideo from '../../components/Profil/MyVideo'
+import MyMusic from '../../components/Profil/MyMusic'
 
 function Profil() {
   return (
     <>
-        < Navbar />
-        < ProfilInfo />
+        < ProfilNavbar />
+        < HeaderProfil />
         < SideNav />
-            <div>Profil</div>
+        < MyWall />
+        < MyGallery />
+        < MyVideo />
+        < MyMusic />
         < Footer />
     </>
   )

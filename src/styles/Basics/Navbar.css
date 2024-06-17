@@ -1,0 +1,33 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Chicle&family=Gravitas+One&display=swap');
+
+.profil-navbar{
+    background-color: #20835d;
+}
+
+.navbar, .profil-navbar {
+    font-family: 'Chicle', cursive;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    padding: 10px 20px;
+    color: white;
+    box-sizing: border-box;
+    z-index: 30;
+    font-size: 26px;
+}
+
+.navbar-logo,
+.navbar-links span {
+    cursor: pointer;
+    color: #daca3bd1;
+    text-decoration: none;
+    padding: 10px;
+}
+
+.navbar-links span:hover {
+    background-color: #f1e68453;
+    border-radius: 14px;
+}

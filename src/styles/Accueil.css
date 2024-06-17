@@ -1,0 +1,247 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Chicle&family=Gravitas+One&display=swap');
+
+body {
+    font-family: 'Inter', sans-serif;
+}
+
+/* VIDEOS */
+h1, .heading-text {
+    font-family: 'Gravitas One', cursive;
+    color: #DACA3B;
+}
+
+.content-item h2 {
+    font-family: 'Gravitas One';
+    color: #DACA3B;
+}
+
+.banner-container {
+    position: relative;
+    width: 100%;
+    height: auto;
+}
+
+.banner-title {
+    position: absolute;
+    top: 15%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #daca3bdf;
+    font-size: 10rem;
+    font-family: 'Chicle', cursive;
+    z-index: 20;
+}
+
+.background-video {
+    width: 100%;
+    height: 100vh;
+    object-fit: cover;
+}
+
+.static-video {
+    width: 100%;
+    z-index: 9;
+    display: block;
+}
+
+.overlay-text {
+    position: absolute;
+    top: 73%;
+    left: 48.7%;
+    transform: translate(-50%, -50%);
+    background-color: #ffeb3b8c;
+    padding: 20px;
+    text-align: center;
+    width: 100%; 
+    height: 820px;
+    z-index: 21; 
+}
+
+.overlay-text h2 {
+    margin-top: 16%;
+    color: #216249; 
+    font-size: 5rem; 
+    font-family: 'Gravitas One'; 
+}
+
+.overlay-text p {
+    color: #ffffff;
+    font-size: 1.5rem; 
+    font-weight: bold;
+    font-family: 'Inter', sans-serif; 
+}
+
+/*  SECTION IMAGES ET TXT */
+.YellowTitle{
+    font-size: 4rem;
+    text-align: center;
+    margin-top: 25%;
+}
+
+.paraWhite{
+    width: 353px;
+    text-align: center;
+    font-size: 1.2rem;
+    margin-left: 27%;
+    color: #ffffff;
+    word-wrap: break-word;
+}
+
+.image-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+.top-row, .middle-row, .bottom-row {
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+    padding: 0;
+}
+
+.image-item, .content-item {
+    flex: 1;
+    text-align: center;
+    margin: 0;
+    height: 875px;
+}
+
+.image-item img, .content-item img {
+    width: 100%;
+    height: 100%;
+}
+
+.content-item {
+    box-shadow: none;
+}
+
+.actualite, .contact-form {
+    background-color: #20835D;
+}
+
+.qui-sommes-nous {
+    background-color: #1D5A43;
+}
+
+/* CONTACT FORM */
+.contact-form form{
+    background-color: #1D5A43;  
+    border-radius: 25px;
+    padding: 30px 0px;
+    width: 55%;
+}
+
+.contact-form {
+    background-color: #20835D; 
+    display: flex;
+    flex-direction: column; 
+    align-items: center; 
+    width: 80%;
+    margin: auto; 
+}
+
+.contact-form label {
+    display: block;
+    margin-bottom: 8px;
+    color: #fff;
+    font-size: 1rem;
+    font-family: 'Inter', sans-serif;
+    text-align: left;
+    margin-left: 25px;
+  }
+
+.contact-form input[type="email"],
+.contact-form input[type="text"],
+.contact-form textarea {
+    width: 85%; 
+    padding: 10px; 
+    margin-bottom: 20px;
+    border: none; 
+    border-radius: 5px; 
+    background: #fff; 
+    color: #333; 
+}
+
+.contact-form button {
+    width: 50%;
+    padding: 10px;
+    margin-top: 20px; 
+    background-color: #DACA3B; 
+    color: white; 
+    font-size: 1.2rem;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer; 
+    transition: background-color 0.3s; 
+}
+
+.contact-form button:hover {
+    background-color: #367C39; 
+}
+
+/* NEWSLETTER */
+.newsletter-container {
+    position: relative;
+    width: 100%;
+    height: auto;
+}
+
+.overlay-newsletter {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    max-width: 650px;
+    background: rgba(0, 0, 0, 0.7);
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    z-index: 10;
+}
+
+.overlay-newsletter h2 {
+    font-family: 'Gravitas One', cursive;
+    color: #DACA3B;
+    font-size: 4rem;
+    margin-bottom: 10px;
+}
+
+.overlay-newsletter p {
+    color: #ffffff;
+    margin-bottom: 20px;
+}
+
+.overlay-newsletter form {
+    width: 100%;
+}
+
+.overlay-newsletter input[type="email"] {
+    width: 90%;
+    padding: 15px;
+    margin-bottom: 10px;
+    border: none;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+
+.overlay-newsletter button {
+    width: 50%;
+    padding: 15px;
+    margin-top: 20px; 
+    background-color: #216249; 
+    color: white; 
+    font-size: 1.5rem;
+    border: none;
+    border-radius: 15px;
+    cursor: pointer; 
+    transition: background-color 0.3s; 
+}
+
+.overlay-newsletter button:hover {
+    background-color: #367C39;
+}

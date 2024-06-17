@@ -1,0 +1,9 @@
+.footer {
+    font-family: 'Inter';
+    font-weight: light;
+    font-size: 18px;
+    background-color: #216249;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
