@@ -5,7 +5,7 @@ import { ref, getDownloadURL } from 'firebase/storage';
 import { db, storage } from '../../firebase';
 import defaultProfileImage from '../../assets/profil.png';  
 import ProfilBackground from '../../assets/profil-background.png';
-import '../../styles/Basics/HeaderProfil.css'
+import '../../styles/Profil/HeaderProfil.css'
 
 const HeaderProfil = () => {
   const { currentUser } = useContext(AuthContext);

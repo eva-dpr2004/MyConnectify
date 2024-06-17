@@ -1,0 +1,238 @@
+/*     WALL     */
+.premier-post{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+.my-wall-container {
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    width: 450px;
+}
+
+.premier-post h1 {
+    margin-top: 2%;
+    margin-bottom: 2%;
+    font-family: 'Gravitas One', cursive;
+    color: #DACA3B;
+    text-align: center;
+}
+
+.post{
+    border-radius: 2px;
+    border: solid 2px rgba(199, 199, 199, 0.796);
+    padding: 5px 5px;
+}
+
+.TextPost{
+    color: rgb(31, 31, 31);
+    text-align: center;
+}
+
+.post-para{
+    color: rgb(150, 150, 150);
+    text-align: right;
+    margin-top: 2%;
+}
+
+.wall-header {
+    background-color: #e0e0e0; 
+    padding: 10px; 
+    border-top-left-radius: 8px; 
+    border-top-right-radius: 8px; 
+    font-weight: bold; 
+    color: #333; 
+}
+
+.wall-content {
+    padding: 15px;
+    background-color: #c3b7b778;
+    border: 2px solid #938f8f;
+    border-radius: 4px;
+  }
+
+.wall-message {
+    background-color: #ffffff;
+    border-radius: 8px; 
+    margin: 10px 0;
+    padding: 10px; 
+    font-size: 14px; 
+}
+
+.wall-input-area {
+    border-top: 1px solid #ccc; 
+    padding: 10px; 
+    display: flex; 
+    align-items: center; 
+    border-radius: 10px;
+    background-color: #20835D; 
+}
+
+.wall-input {
+    flex: 1; 
+    margin-right: 10px; 
+    padding: 8px; 
+    border: 1px solid #ccc; 
+    border-radius: 4px; 
+}
+
+.wall-send-button {
+    padding: 8px 16px; 
+    background-color: #4CAF50; 
+    color: white; 
+    border: none; 
+    border-radius: 4px; 
+    cursor: pointer; 
+}
+
+.wall-upload-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 8px;
+    margin-right: 10px;
+    font-size: 16px; 
+}
+
+.wall-send-button:hover, .wall-upload-button:hover {
+    background-color: #45a049; 
+}
+
+/*     GALLERY     */
+.gallery-container {
+    text-align: center;
+    margin: 20px;
+}
+
+.gallery-title {
+    font-family: 'Gravitas One', cursive;
+    color: #DACA3B;
+    font-size: 2.5rem;
+    margin-bottom: 2%;
+    margin-top: 2%;
+}
+
+.gallery-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px; 
+    width: 50%;
+    margin-left: 25%;
+}
+
+.gallery-item {
+    flex: 1 1 calc(50% - 10px); /* Ajustez la largeur en fonction de l'espace réduit */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    overflow: hidden;
+    max-width: calc(50% - 10px); /* Ajustez la largeur en fonction de l'espace réduit */
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 385px;
+    display: block;
+}
+
+/*     VIDEO     */
+.video-title{
+    font-family: 'Gravitas One', cursive;
+    color: #DACA3B;
+    font-size: 2.5rem;
+    margin-top: 2%;
+    margin-bottom: 2%;
+}
+
+.video-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .background-video-profil {
+    margin-top: 2%;
+    margin-bottom: 10px;
+    font-family: 'Gravitas One', cursive;
+    font-size: 2rem;
+    color: #DACA3B;
+  }
+  
+  video {
+    width: 100%;
+    max-width: 730px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+
+/*     Music     */
+
+.music-container {
+    text-align: center;
+    margin: 20px;
+    align-content: center;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .music-container h1 {
+    font-family: 'Gravitas One', cursive;
+    color: #DACA3B;
+  }
+  
+  .music-item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 20px 0;
+    padding: 10px;
+    background-color: #20835D;
+    border-radius: 8px;
+    width: 35%;
+    height: 135px;
+  }
+  
+  .album-cover {
+    width: 180px;
+    height: 155px;
+    border-radius: 8px;
+    margin-right: 75px;
+  }
+  
+  .music-info {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .music-info p {
+    font-family: 'Inter', sans-serif;
+    font-size: 1.2rem;
+    color: white;
+    margin: 0;
+  }
+  
+  .audio-controls {
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+  }
+  
+  .audio-icon {
+    color: white;
+    font-size: 2rem;
+    margin-right: 10px;
+  }
+  
+  .audio-bar {
+    width: 150px;
+    height: 8px;
+    background-color: #ccc;
+    border-radius: 4px;
+  }
+  

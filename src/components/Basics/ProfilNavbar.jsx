@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../context/AuthContext'; 
 import '../../styles/Basics/Navbar.css';
 
-function Navbar() {
+function ProfilNavbar() {
     const { currentUser, dispatch } = useContext(AuthContext);
     const navigate = useNavigate();
 
@@ -36,4 +36,4 @@ function Navbar() {
     );
 }
 
-export default Navbar;
+export default ProfilNavbar;

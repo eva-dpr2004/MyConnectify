@@ -2,12 +2,13 @@ import React from 'react'
 import homer from '../../assets/homer.jpeg'; 
 import SendIcon from '@mui/icons-material/Send';
 import FileUploadIcon from '@mui/icons-material/FileUpload';
-import '../../styles/Profil/MyWall.css' 
+import '../../styles/Profil/ProfilComponents.css' 
 
 function MyWall() {
   return (
+    <div className="premier-post">
+      <h1>My Walls</h1>
       <div className="my-wall-container">
-        <h1>My Walls</h1>
           <div className="wall-content">
               <div className="wall-message">
                 <div className='post'>
@@ -16,30 +17,32 @@ function MyWall() {
                 </div>
                 <br></br>
                   <div className='post' style={{ color: 'white'}}>
-                      <img src={homer} alt="Homer" style={{ width: '225px', display:'flex', justifyContent:'center', padding:'5px' }} />
+                      <img src={homer} alt="Homer" style={{ width: '300px', display:'flex', justifyContent:'center', alignItems:'center', padding:'40px' }} />
+                      <h4 className='TextPost'>J'aime le classique...</h4>
                       <p className='post-para'>14:20</p>
                   </div>
                   <br></br>
                   <div className='post'>
-                    <h4>J'aime le classique...</h4>
-                    <p className='post-para'>14:20</p>
+                    <h4 className='TextPost'>J'ai plus d'inspiration...</h4>
+                    <p className='post-para'>01:25</p>
                   </div>
               </div>
               <div className="wall-input-area">
-                  <input
-                      className="wall-input"
-                      type="text"
-                      placeholder="Écrivez un message..."
-                  />
+                <input
+                  className="wall-input"
+                  type="text"
+                  placeholder="Écrivez un message..."
+                />
                   <button type="button" className="wall-upload-button">
-                  <FileUploadIcon style={{ color: 'white' , backgroundColor:'#fbfb64', borderRadius:'20px', padding:'5px'}}/> 
+                    <FileUploadIcon style={{ color: 'white' , backgroundColor:'#fbfb64', borderRadius:'20px', padding:'5px'}}/> 
                   </button>
                   <button type="button" className="wall-send-button">
-                      <SendIcon style={{height:'20px'}}/> 
+                    <SendIcon style={{height:'20px'}}/> 
                   </button>
               </div>
           </div>
       </div>
+    </div>
   );
 }
 

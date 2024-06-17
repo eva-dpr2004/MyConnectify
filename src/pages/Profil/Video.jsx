@@ -1,17 +1,20 @@
 import React from 'react'
-import Navbar from '../../components/Basics/Navbar'
+import ProfilNavbar from '../../components/Basics/ProfilNavbar'
 import Footer from '../../components/Basics/Footer'
 import SideNav from '../../components/Profil/SideNav'
+import HeaderProfil from '../../components/Profil/HeaderProfil'
+import MyVideo from '../../components/Profil/MyVideo'
 
 function Video() {
   return (
     <>
-        < Navbar />
+        < ProfilNavbar />
+        < HeaderProfil />
         < SideNav />
-            <div>Video</div>
+        < MyVideo />
         < Footer />
     </>
   )
 }
 
-export default Video
+export default Video;

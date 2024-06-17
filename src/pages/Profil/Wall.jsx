@@ -1,17 +1,20 @@
 import React from 'react'
-import Navbar from '../../components/Basics/Navbar'
+import ProfilNavbar from '../../components/Basics/ProfilNavbar'
 import Footer from '../../components/Basics/Footer'
 import SideNav from '../../components/Profil/SideNav'
+import HeaderProfil from '../../components/Profil/HeaderProfil'
+import MyWall from '../../components/Profil/MyWall'
 
 function Wall() {
   return (
     <>
-        < Navbar />
+        < ProfilNavbar />
+        < HeaderProfil />
         < SideNav />
-            <div>Wall</div>
+        < MyWall />
         < Footer />
     </>
   )
 }
 
-export default Wall
+export default Wall;

@@ -1,17 +1,20 @@
 import React from 'react'
-import Navbar from '../../components/Basics/Navbar'
+import ProfilNavbar from '../../components/Basics/ProfilNavbar'
 import Footer from '../../components/Basics/Footer'
 import SideNav from '../../components/Profil/SideNav'
+import HeaderProfil from '../../components/Profil/HeaderProfil'
+import MyGallery from '../../components/Profil/MyGallery'
 
 function Gallery() {
   return (
     <>
-        < Navbar />
+        < ProfilNavbar />
+        < HeaderProfil />
         < SideNav />
-            <div>Gallery</div>
+        < MyGallery />
         < Footer />
     </>
   )
 }
 
-export default Gallery
+export default Gallery;

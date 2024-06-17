@@ -1,17 +1,20 @@
 import React from 'react'
-import Navbar from '../../components/Basics/Navbar'
+import ProfilNavbar from '../../components/Basics/ProfilNavbar'
 import Footer from '../../components/Basics/Footer'
 import SideNav from '../../components/Profil/SideNav'
+import HeaderProfil from '../../components/Profil/HeaderProfil'
+import MyMusic from '../../components/Profil/MyMusic'
 
 function Music() {
   return (
     <>
-        < Navbar />
+        < ProfilNavbar />
+        < HeaderProfil />
         < SideNav />
-            <div>Music</div>
+        < MyMusic />
         < Footer />
     </>
   )
 }
 
-export default Music
+export default Music;
