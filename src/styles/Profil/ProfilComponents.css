@@ -147,7 +147,7 @@
     margin-bottom: 2%;
 }
 
-.video-container {
+.video-container-profil {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -162,7 +162,7 @@
     color: #DACA3B;
   }
   
-  video {
+  .video-container-profil video {
     width: 100%;
     max-width: 730px;
     border-radius: 10px;
