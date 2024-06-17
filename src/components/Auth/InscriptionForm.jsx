@@ -45,12 +45,27 @@ const InscriptionForm = () => {
     setData({ ...data, [id]: value });
   };
 
+  const validatePassword = (password) => {
+    const hasMinLength = password.length >= 12;
+    const hasSpecialChar = /[!@#$%^&*(),.?":{}|<>]/.test(password);
+    const hasLowercase = /[a-z]/.test(password);
+    const hasUppercase = /[A-Z]/.test(password);
+
+    return hasMinLength && hasSpecialChar && hasLowercase && hasUppercase;
+  };
+
   const handleAdd = async (e) => {
     e.preventDefault();
     if (data.password !== data.passwordConfirm) {
-      alert('Passwords do not match');
+      alert('Les mots de passe ne correspondent pas');
       return;
     }
+
+    if (!validatePassword(data.password)) {
+      alert('Le mot de passe doit contenir au minimum 12 caractères, inclure au moins un caractère spécial, une lettre minuscule et une majuscule.');
+      return;
+    }
+
     try {
       const res = await createUserWithEmailAndPassword(auth, data.email, data.password);
       await setDoc(doc(db, 'users', res.user.uid), {
@@ -60,7 +75,7 @@ const InscriptionForm = () => {
       navigate('/');
     } catch (err) {
       console.error(err);
-      alert('Failed to create an account');
+      alert('Échec de la création du compte');
     }
   };
 
