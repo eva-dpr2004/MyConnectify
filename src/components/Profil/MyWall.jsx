@@ -17,7 +17,7 @@ function MyWall() {
                 </div>
                 <br></br>
                   <div className='post' style={{ color: 'white'}}>
-                      <img src={homer} alt="Homer" style={{ width: '300px', display:'flex', justifyContent:'center', alignItems:'center', padding:'40px' }} />
+                      <img src={homer} alt="Homer" style={{ width: '200px', display:'flex', justifyContent:'center', alignItems:'center', padding:'10px' }} />
                       <h4 className='TextPost'>J'aime le classique...</h4>
                       <p className='post-para'>14:20</p>
                   </div>

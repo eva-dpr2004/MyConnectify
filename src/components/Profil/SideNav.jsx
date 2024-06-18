@@ -1,8 +1,6 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-
-import '../../styles/Profil/SidenavStyle';
-
+import { Sidenav, SidenavItem } from '../../styles/Profil/SidenavStyle';
 import MenuIcon from '@mui/icons-material/Menu';
 import CloseIcon from '@mui/icons-material/Close';
 
@@ -16,17 +14,17 @@ function SideNav() {
 
   return (
     <div>
-      <div className="burger-menu-icon" onClick={toggleMenu}>
+      <div onClick={toggleMenu} style={{ cursor: 'pointer', color: isOpen ? 'white' : 'black', position: 'fixed', top: '10px', left: '5px', fontSize: '2rem', zIndex: '1001' }}>
         {isOpen ? <CloseIcon /> : <MenuIcon />}
       </div>
       {isOpen && (
-        <div className="sidenav">
-          <div className="sidenav-item" onClick={() => navigate('/profil')}>ALL</div>
-          <div className="sidenav-item" onClick={() => navigate('/profil/wall')}>Walls</div>
-          <div className="sidenav-item" onClick={() => navigate('/profil/gallery')}>Gallery</div>
-          <div className="sidenav-item" onClick={() => navigate('/profil/video')}>Video</div>
-          <div className="sidenav-item" onClick={() => navigate('/profil/music')}>Music</div>
-        </div>
+        <Sidenav>
+          <SidenavItem onClick={() => navigate('/profil')}>All</SidenavItem>
+          <SidenavItem onClick={() => navigate('/profil/wall')}>Walls</SidenavItem>
+          <SidenavItem onClick={() => navigate('/profil/gallery')}>Gallery</SidenavItem>
+          <SidenavItem onClick={() => navigate('/profil/video')}>Video</SidenavItem>
+          <SidenavItem onClick={() => navigate('/profil/music')}>Music</SidenavItem>
+        </Sidenav>
       )}
     </div>
   );

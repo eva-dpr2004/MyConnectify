@@ -31,3 +31,9 @@
     background-color: #f1e68453;
     border-radius: 14px;
 }
+
+@media (max-width: 428px) {
+    .navbar-links, span{
+        font-size: 16px;
+    }
+}

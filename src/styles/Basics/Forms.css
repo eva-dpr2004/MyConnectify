@@ -39,7 +39,7 @@
 }
 
 input[type="text"], input[type="email"], input[type="password"], .form-container textarea {
-  width: 100%;
+  width: 97%;
   padding: 10px;
   margin-top: 5px;
   border: none;
@@ -67,4 +67,48 @@ input[type="text"], input[type="email"], input[type="password"], .form-container
 .switch-form span {
   cursor: pointer;
   color: #DACA3B;
+}
+
+@media (max-width: 428px) {
+  .inscription-container, .connexion-container, .contact-container {
+      flex-direction: column; 
+      padding: 20px; 
+  }
+
+  .image-container, .form-container {
+      width: 100%; 
+  }
+
+  .image-container img {
+    height: 400px;
+    margin-top: 15%;
+  }
+
+  .form-container {
+    padding: 2px;
+    margin-top: 5%;
+  }
+
+  input[type="text"], input[type="email"], input[type="password"], .form-container textarea {
+      padding: 8px; 
+  }
+
+  .form-container button {
+    padding: 10px;
+    width: 35%;
+    align-content: center;
+    justify-content: center;
+    text-align: center;
+    margin-left: 31%;
+  }
+
+  .form-input, .form-container label, .switch-form {
+      font-size: 0.9rem; 
+  }
+
+  .form-input{
+    width: 90%;
+    margin-left: 2%;
+    margin-bottom: 15px;
+  }
 }

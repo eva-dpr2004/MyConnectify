@@ -10,7 +10,7 @@ import '../../styles/Profil/HeaderProfil.css'
 const HeaderProfil = () => {
   const { currentUser } = useContext(AuthContext);
   const [userProfile, setUserProfile] = useState(null);
-  const [imageUrl, setImageUrl] = useState(defaultProfileImage);  // Utilisez l'image par défaut si aucune n'est disponible
+  const [imageUrl, setImageUrl] = useState(defaultProfileImage);  
 
   useEffect(() => {
     if (currentUser) {
@@ -22,7 +22,7 @@ const HeaderProfil = () => {
           if (userData.img) {
             getDownloadURL(ref(storage, userData.img)).then(setImageUrl);
           } else {
-            setImageUrl(defaultProfileImage);  // Utilise l'image par défaut si aucune n'est disponible
+            setImageUrl(defaultProfileImage);  
           }
         } else {
           console.log('No user profile found');

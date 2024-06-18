@@ -36,3 +36,9 @@
     margin-right: 8%;
     border: 3px solid #b3aeae5c;
 }
+
+@media (max-width: 428px) {
+    .profile-info{
+        width: 75%;
+    }
+}

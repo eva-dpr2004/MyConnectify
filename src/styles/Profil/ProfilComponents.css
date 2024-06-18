@@ -4,6 +4,7 @@
     justify-content: center;
     flex-direction: column;
     align-items: center;
+    margin-bottom: 2%;
 }
 
 .my-wall-container {
@@ -191,6 +192,7 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    margin-bottom: 2%;
   }
   
   .background-video-profil {
@@ -273,5 +275,78 @@
     height: 8px;
     background-color: #ccc;
     border-radius: 4px;
+  }
+
+  @media (max-width: 428px) {
+    /* Wall */
+
+    .wall-content{
+      padding: 30px;
+    }
+
+    .my-wall-container, .premier-post {
+      margin-left: 3%;
+      width: 90%; 
+    }
+
+    .wall-message, .wall-input, .wall-send-button, .wall-upload-button {
+        font-size: 0.9rem; 
+    }
+
+    /* Gallery */
+
+    .modal-content {
+      max-width: 50%;
+      max-height: 400px;
+    }
+
+    .gallery-container{
+      margin-left: -18%;
+    }
+
+    .gallery-grid {
+      width: 100%; 
+      flex-direction: column; 
+  }
+
+    .gallery-item {
+      max-width: 70%;
+    }
+
+    .gallery-item img{
+      height: 325px;
+    }
+
+    .gallery-title{
+      margin-left: 16%;
+    }
+
+    /* Video */
+
+    .video-container-profil video {
+        width: 100%; 
+    }
+
+    .video-container-profil video {
+      width: 90%;
+    }
+
+    /* Music */
+
+    .music-item {
+      flex-direction: column;
+      width: 90%;
+      height: auto;
+    }
+
+    .album-cover {
+        width: 100px; 
+        height: 90px; 
+        margin-right: 20px; 
+    }
+
+    .audio-bar {
+        width: 100px; 
+    }
   }
   
